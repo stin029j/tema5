@@ -11,24 +11,24 @@
   <script>
     let laengde = prompt("angiv laengde");
     let bredde = prompt ("angiv bredde");
-    let areal = laengde * bredde;
-      let resultat =`Arealet er ${areal}. har du brug for et nyt areal?`;
+      /*Lav en funktion, areal, som med længde og
+bredde som parametre, kan udregne et areal,
+og returnere resultatet.*/
 
-      //den ene
+    //let areal = laengde * bredde;
+
+      function areal(l, b) {
+          return (l * b);
+      }
+
+    let resultat =`Arealet er ${areal(laengde,bredde)}. har du brug for et nyt areal?`;
+
+
       confirm(resultat);
 
       if(confirm){
           location.reload();
       }
-
-      //man kan gøre det på den ene eller den anden måde
-
-
-      //den anden
-      if(confirm((`Arealet er ${areal}. har du brug for et nyt areal?`)){
-          location.reload();
-      }
-
 
     </script>
 </body>
