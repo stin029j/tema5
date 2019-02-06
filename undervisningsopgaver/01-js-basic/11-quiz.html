@@ -11,25 +11,25 @@
   <body>
       <script>
         let point = 0;
-        let spørgsmål1 = "Er en hund større end en elefant?";
-        let spørgsmål2 = "Er jorden rund?";
-        let spørgsmål3 = "Kommer februar før januar?";
-        let spørgsmål4 = "Kan man gå på vandet?";
-        let spørgsmål5 = "Er det lovligt at lave billeddeling?";
+        let spørgsmål1 = "Er græs grønt?";
+        let spørgsmål2 = `Er "Darth Vador" stavet rigtigt?`;
+        let spørgsmål3 = "Kommer julen før påsken?";
+        let spørgsmål4 = "Kan strudse flyve?";
+        let spørgsmål5 = "Er en citron gul?";
         if (confirm(spørgsmål1)) {
-            point--;
-        } else {
             point++;
+        } else {
+            point--;
         }
         if (confirm(spørgsmål2)) {
-            point++;
+            poin--;
         } else {
-            point--;
+            point++;
         }
         if (confirm(spørgsmål3)) {
-            point--;
-        } else {
             point++;
+        } else {
+            point--;
         }
         if (confirm(spørgsmål4)) {
             point--;
@@ -37,9 +37,9 @@
             point++;
         }
         if (confirm(spørgsmål5)) {
-            point--;
-        } else {
             point++;
+        } else {
+            point--;
         }
         alert(`din pointscorer er ${point}`);
         if (confirm) {
