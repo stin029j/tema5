@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+   <div id="pig">
+      <h1></h1>
+      <p>Type: </p>
+      <p>Levested: </p>
+       <img src="" alt="">
+   </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", start);
+
+    let pig = {
+        "dyr":"gris",
+        "type":"pattedyr",
+        "billede":"http://helf-kea.dk/test/gris.png",
+        "levested":"svinefarm"
+    };
+
+
+    function start(){
+        console.log("lalalal");
+        let dest = document.querySelector("#pig");
+        dest.querySelector("h1").textContent=pig.dyr;
+        dest.querySelector("img").src=pig.billede;
+        dest.querySelector("p").innerHTML += `${pig.type}`;
+        dest.querySelector("p+p").innerHTML += `${pig.levested}`;
+    };
+
+    </script>
+</body>
+</html>
