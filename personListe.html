@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .dyr {
+            border: solid pink;
+            margin: 10px;
+            width: 200px;
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+        }
+        img{
+            width:200px;
+        }
+        div{
+        border: 1px solid black;
+        background: rgba(0, 0, 0, 0.63);
+        }
+        a{
+        font-family: monospace;
+        text-decoration: none;
+        color: azure;
+        font-size: 2rem;
+        margin: 50px;
+        padding: 80px;
+        }
+        a:hover{
+            color: rgba(245, 245, 245, 0.43);
+        }
+        h2{
+            color: azure;
+            font-weight: 100;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="liste"></div>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", start);
+        let personer = [];
+        function start() {
+            let dest = document.querySelector("#liste");
+
+            async function getJson() {
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
+                personer = await jsonData.json();
+                visPersoner();
+            }
+
+            function visPersoner() {
+                personer.forEach(hvilket => {
+                    dest.innerHTML +=
+                        `<div class=personer>
+                    <h2>${hvilket.navn}</h2>
+                    <img src=${hvilket.billede}>
+                    <br><a href="https://github.com/${hvilket.github}/tema5">Github: </a>`;
+                })
+            }
+            getJson();
+        }
+    </script>
+
+</body>
+
+</html>
